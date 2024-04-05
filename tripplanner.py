@@ -1,5 +1,5 @@
 """
-Trip Planner
+Trip Planner Project
 """
 
 import sys
