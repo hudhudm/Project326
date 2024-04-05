@@ -27,4 +27,3 @@ class Traveler:
         self.budget = budget
         self.trip = []
 
-
