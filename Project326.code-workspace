@@ -1,7 +1,12 @@
 {
     "folders": [
         {
+            "name": "Project326",
             "path": "."
+        },
+        {
+            "name": "python",
+            "path": ".."
         }
     ]
 }
