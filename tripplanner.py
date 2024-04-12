@@ -10,12 +10,12 @@ class Traveler:
     def __init__(self, name, budget = 0, trip = []):
         """
        This function initializes the attributes of a Traveler object.
+       
        Args:
-       self(Traveler) the current instance of the Traveler class
-       name(str) the name of the traveler
-       budget(float) the budget of the individual traveler
-	    trips(list) list of Trip objects under the traveler can access and edit
-
+        self(Traveler): the current instance of the Traveler class
+        name(str): the name of the traveler
+        budget(float): the budget of the individual traveler
+	    trips(list): list of Trip objects under the traveler can access and edit
 
        Returns: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        """
@@ -31,6 +31,7 @@ class Traveler:
             activity (str): the name of the activity desired at the destination
             destination (str): the name of the destination state
             cost (int): cost of the trip 
+        
         Returns:
             str: activity, destination, and cost for the trip
         """
