@@ -22,6 +22,21 @@ class Traveler:
         self.name = name
         self.budget = budget
         self.trip = []
+        
+    def addTrip(newTrip):
+        """
+         This function allows the user to add a trip to their r trip attribute.
+        
+        Args:
+            activity (str): the name of the activity desired at the destination
+            destination (str): the name of the destination state
+            cost (int): cost of the trip 
+        Returns:
+            str: activity, destination, and cost for the trip
+        """
+        trip.append(newTrip)
+        
+        return f"Trip added to: {newTrip.destination} with activity {newTrip.activity} with a cost of ${newTrip.cost}"
 
 class Trip:
     def __init__(self):
@@ -32,18 +47,6 @@ class Trip:
         self.cost = 0
         self.activities = []
 
-    def addTrip(self, destination, cost, activity):
-        """
-         This function allows the user to add a trip to their traveler attribute.
-        
-        Args:
-            activity (str): the name of the activity desired at the destination
-            destination (str): the name of the destination state
-            cost (int): cost of the trip 
-        Returns:
-            str: activity, destination, and cost for the trip
-        """
-        self.activities.append(activity)
-        self.destination = destination
-        self.cost = cost
-        return f"Trip added to: {destination} with activity {activity} with a cost of ${cost}"
+   
+    
+    
