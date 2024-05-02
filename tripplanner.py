@@ -5,8 +5,12 @@ Trip Planner Project
 import sys
 import argparse
 import math
-
+Database(Travelers(Trip))
 class Traveler:
+    # Sign in 
+    # make a dictionary of users
+    # key username value password
+    # if name is not in dictionary append to dictionary if it is start the program
     def __init__(self, name, budget = 0, trip = []):
         """
        This function initializes the attributes of a Traveler object.
@@ -23,7 +27,7 @@ class Traveler:
         self.budget = budget
         self.trip = []
         
-    def addTrip(newTrip):
+    def addTrip(self):
         """
          This function allows the user to add a trip to their r trip attribute.
         
@@ -35,7 +39,7 @@ class Traveler:
         Returns:
             str: activity, destination, and cost for the trip
         """
-        trip.append(newTrip)
+        trip.append(Trip)
         
         return f"Trip added to: {newTrip.destination} with activity {newTrip.activity} with a cost of ${newTrip.cost}"
 
