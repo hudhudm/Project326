@@ -5,11 +5,12 @@ class Trip:
     def __init__(self, state, activity, cost_rating, weather):
         """
         Initializes a Trip object.
+        
         Args:
-        state (str): the name of the destination state
-        activity (str): the activity available at the destination
-        cost_rating (int): the average cost rating on a scale of 1-5
-        weather (str): the average weather conditions
+            state (str): the name of the destination state
+            activity (str): the activity available at the destination
+            cost_rating (int): the average cost rating on a scale of 1-5
+            weather (str): the average weather conditions
         """
         self.state = state
         self.activity = activity
@@ -20,9 +21,10 @@ class Traveler:
     def __init__(self, name, budget):
         """
         Initializes a Traveler object.
+        
         Args:
-        name (str): the name of the traveler
-        budget (float): the budget of the individual traveler
+            name (str): the name of the traveler
+            budget (float): the budget of the individual traveler
         """
         self.name = name
         self.budget = budget
@@ -31,10 +33,11 @@ class Traveler:
     def add_trip(self, destination, cost, activities):
         """
         Adds a trip to the traveler's list of trips.
+        
         Args:
-        destination (str): the name of the destination state
-        cost (int): cost of the trip
-        activities (list): list of activities for the trip
+            destination (str): the name of the destination state
+            cost (int): cost of the trip
+            activities (list): list of activities for the trip
         """
         trip = Trip(destination, cost, activities)
         self.trips.append(trip)
@@ -42,10 +45,12 @@ class Traveler:
 def load_states_data(filename):
     """
     Load data from the states.csv file.
+    
     Args:
-    filename (str): the name of the CSV file
+        filename (str): the name of the CSV file
+    
     Returns:
-    list: a list of Trip objects
+        list: a list of Trip objects
     """
     trips = []
     with open(filename, newline='') as csvfile:
@@ -70,18 +75,14 @@ def get_unique_values(trips, attribute):
 def poll_user_preferences(trips):
     """
     Poll the user for their preferences.
+    
     Returns:
-    tuple: a tuple containing user's budget, desired activity, and preferred weather
+        tuple: a tuple containing user's budget, desired activity, and preferred weather
     """
-    # budget = float(input("Enter your budget: "))
-    # activity = ("These are some fun activities to try! Choose one activity: ", ', '.join(get_unique_values(trips, 'activity')), '\n Enter your desired activity: ' )
-    # #activity = input("Enter your desired activity: ")
-    # weather = input("Enter your preferred weather conditions: ")
     name = input("Enter your name: ")
     print(f"\n Hi {name}, Welcome to Trip Planner! We will be asking you  a few questions to match with the best fitting trip for your preferences and your budget! \n")
     print("Here's a list of fun activities you can choose from: ", ', '.join(get_unique_values(trips, 'activity')))
 
-    # Get unique weather options
     all_weather = get_unique_values(trips, 'weather')
 
     while True:
@@ -113,13 +114,15 @@ def poll_user_preferences(trips):
 def recommend_trip(trips, budget, activity, weather):
     """
     Recommend an ideal trip based on user's preferences.
+    
     Args:
-    trips (list): a list of Trip objects
-    budget (float): user's budget
-    activity (str): user's desired activity
-    weather (str): user's preferred weather conditions
+        trips (list): a list of Trip objects
+        budget (float): user's budget
+        activity (str): user's desired activity
+        weather (str): user's preferred weather conditions
+    
     Returns:
-    Trip: the recommended trip object
+        Trip: the recommended trip object
     """
     suitable_trips = []
     for trip in trips:
@@ -136,18 +139,20 @@ def recommend_trip(trips, budget, activity, weather):
                 suitable_trips.append(trip)
 
     if suitable_trips:
-        return suitable_trips[0]  # Return the first suitable trip found
+        return suitable_trips[0]
     else:
         return None
 
 def get_random_trip(trips, activity):
     """
     Generate a random trip matching the selected activity.
+    
     Args:
-    trips (list): a list of Trip objects
-    activity (str): user's desired activity
+        trips (list): a list of Trip objects
+        activity (str): user's desired activity
+    
     Returns:
-    Trip: a random trip object matching the activity
+        Trip: a random trip object matching the activity
     """
     matching_trips = [trip for trip in trips if trip.activity.lower() == activity.lower()]
     if matching_trips:
@@ -164,7 +169,6 @@ def main():
         print(f"We think you would enjoy a trip to {recommended_trip.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating }. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!")
         add_trip = input("Would you like to add this trip? (Yes/No): ")
         if add_trip.lower() == 'yes':
-                # Implement code to add trip to traveler's list of trips
                 print(f"Trip to {recommended_trip.state} added to your list of trips.")
         else:
                 print("No trip added.")
@@ -176,7 +180,6 @@ def main():
                   f"Cost Rating: {'$' * random_trip.cost_rating}.")
             add_trip = input("Would you like to add this trip? (Yes/No): ")
             if add_trip.lower() == 'yes':
-                # Implement code to add trip to traveler's list of trips
                 print(f"Trip to {random_trip.state} added to your list of trips.")
             else:
                 print("No trip added.")
