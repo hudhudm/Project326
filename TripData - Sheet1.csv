@@ -1,51 +1,51 @@
-State,Activity,Cost
-Alabama,Golfing,3
-Alaska,Wildlife Watching,2
-Arizona,Hot Air Ballooning,5
-Arkansas,Hiking,2
-California,Surfing,3
-Colorado,Skiing,5
-Connecticut,Cultural Tour,2
-Delaware,Beach,2
-Florida,Scuba Diving,4
-Georgia,Horseback Riding,3
-Hawaii,Snorkeling,3
-Idaho,Whitewater Rafting,4
-Illinois,Music Festival,3
-Indiana,Wine Tasting,3
-Iowa,Cycling,2
-Kansas,Camping,2
-Kentucky,Bourbon Tasting,3
-Louisiana,Swamp Tour,3
-Maine,Lobster Tour,3
-Maryland,Sailing,3
-Massachusetts,Whale Watching,3
-Michigan,Fishing,2
-Minnesota,Snowmobiling,4
-Mississippi,Riverboat Cruise,3
-Missouri,Zip Lining,4
-Montana,Fly Fishing,4
-Nebraska,Sandhill Crane Migration Viewing,2
-Nevada,Helicopter Tour,5
-New Hampshire,Maple Sugaring,2
-New Jersey,Parasailing,4
-New Mexico,Hot Springs,3
-New York,Broadway Show,5
-North Carolina,Kayaking,3
-North Dakota,Prairie Dog Watching,2
-Ohio,Rock Climbing,4
-Oklahoma,Rodeo,3
-Oregon,Wine Tasting,3
-Pennsylvania,Amish Farm Visit,3
-Rhode Island,Plantation Tour,2
-South Carolina,Mount Rushmore Tour,3
-South Dakota,Bluegrass Concert,2
-Tennessee,Barbecue Tour,3
-Texas,Canyon Hiking,3
-Utah,Apple Picking,2
-Vermont,Historical Tour,2
-Virginia,Whale Watching,2
-Washington,Whitewater Rafting,3
-West Virginia,Cheese Tasting,4
-Wisconsin,Horseback Riding,3
-Wyoming,Stargazing,3
+State,Activity,Cost,Weather
+Alabama,Golfing,3,Warm
+Alaska,Wildlife Watching,2,Cold
+Arizona,Hot Air Ballooning,5,Hot
+Arkansas,Hiking,2,Warm
+California,Surfing,3,Warm
+Colorado,Skiing,5,Cool
+Connecticut,Cultural Tour,2,Cool
+Delaware,Beach,2,Cool
+Florida,Scuba Diving,4,Hot
+Georgia,Horseback Riding,3,Warm
+Hawaii,Snorkeling,3,Hot
+Idaho,Whitewater Rafting,4,Cool
+Illinois,Music Festival,3,Cool
+Indiana,Wine Tasting,3,Cool
+Iowa,Cycling,2,Cool
+Kansas,Camping,2,Warm
+Kentucky,Bourbon Tasting,3,Warm
+Louisiana,Swamp Tour,3,Hot
+Maine,Lobster Tour,3,Cold
+Maryland,Sailing,3,Warm
+Massachusetts,Whale Watching,3,Cool
+Michigan,Fishing,2,Cool
+Minnesota,Snowmobiling,4,Cold
+Mississippi,Riverboat Cruise,3,Warm
+Missouri,Zip Lining,4,Warm
+Montana,Fly Fishing,4,Cold
+Nebraska,Sandhill Crane Migration Viewing,2,Cool
+Nevada,Helicopter Tour,5,Hot
+New Hampshire,Maple Sugaring,2,Cool
+New Jersey,Parasailing,4,Cool
+New Mexico,Hot Springs,3,Warm
+New York,Broadway Show,5,Cool
+North Carolina,Kayaking,3,Warm
+North Dakota,Prairie Dog Watching,2,Cold
+Ohio,Rock Climbing,4,Cool
+Oklahoma,Rodeo,3,Warm
+Oregon,Wine Tasting,3,Cool
+Pennsylvania,Amish Farm Visit,3,Cool
+Rhode Island,Plantation Tour,2,Cool
+South Carolina,Mount Rushmore Tour,3,Warm
+South Dakota,Bluegrass Concert,2,Warm
+Tennessee,Barbecue Tour,3,Cold
+Texas,Canyon Hiking,3,Warm
+Utah,Apple Picking,2,Cool
+Vermont,Historical Tour,2,Warm
+Virginia,Whale Watching,2,Cool
+Washington,Whitewater Rafting,3,Cool
+West Virginia,Cheese Tasting,4,Cool
+Wisconsin,Horseback Riding,3,
+Wyoming,Stargazing,3,
