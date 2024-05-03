@@ -5,6 +5,7 @@ Trip Planner Project
 import sys
 import argparse
 import math
+
 Database(Travelers(Trip))
 class Traveler:
     # Sign in 
