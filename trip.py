@@ -1,4 +1,5 @@
-"Trip Planner Project"
+import csv
+import random
 
 class Trip:
     def __init__(self, state, activity, cost_rating, weather):
@@ -38,10 +39,6 @@ class Traveler:
         trip = Trip(destination, cost, activities)
         self.trips.append(trip)
 
-# Planner.py - Driver script
-
-import csv
-
 def load_states_data(filename):
     """
     Load data from the states.csv file.
@@ -54,7 +51,7 @@ def load_states_data(filename):
     with open(filename, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            trip = Trip(row['state'], row['activity'], int(row['cost_rating']), row['weather'])
+            trip = Trip(row['State'], row['Activity'], int(row['Cost']), row['Weather'])
             trips.append(trip)
     return trips
 
@@ -91,15 +88,42 @@ def recommend_trip(trips, budget, activity, weather):
     else:
         return None
 
+def get_random_trip(trips, activity):
+    """
+    Generate a random trip matching the selected activity.
+    Args:
+    trips (list): a list of Trip objects
+    activity (str): user's desired activity
+    Returns:
+    Trip: a random trip object matching the activity
+    """
+    matching_trips = [trip for trip in trips if trip.activity.lower() == activity.lower()]
+    if matching_trips:
+        return random.choice(matching_trips)
+    else:
+        return None
+
 def main():
-    trips = load_states_data('states.csv')
+    trips = load_states_data('TripData.csv')
     budget, activity, weather = poll_user_preferences()
     recommended_trip = recommend_trip(trips, budget, activity, weather)
 
     if recommended_trip:
         print(f"Recommended trip: {recommended_trip.state}")
     else:
-        print("No suitable trip found based on your preferences.")
+        random_trip = get_random_trip(trips, activity)
+        if random_trip:
+            print(f"I can't find a suitable trip for your preferences, but what about a trip to {random_trip.state}. "
+                  f"It will be nice and {random_trip.weather.lower()} and you will be able to {random_trip.activity.lower()}. "
+                  f"It would cost around {random_trip.cost_rating}.")
+            add_trip = input("Would you like to add this trip? (Yes/No): ")
+            if add_trip.lower() == 'yes':
+                # Implement code to add trip to traveler's list of trips
+                print(f"Trip to {random_trip.state} added to your list of trips.")
+            else:
+                print("No trip added.")
+        else:
+            print("No suitable trip found based on your preferences.")
 
 if __name__ == "__main__":
     main()
