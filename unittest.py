@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-import trip
+from trip import main, recommended_trip
 
 class TestMain(unittest.TestCase):
 
