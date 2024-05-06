@@ -1,17 +1,17 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from trip import main, recommended_trip
+from trip import main
 
 class TestMain(unittest.TestCase):
-
+    
     @patch('builtins.input', side_effect=['yes'])
     @patch('sys.stdout', new_callable=StringIO)
     def test_add_trip_yes(self, mock_stdout, mock_input):
         budget = 1000
         main(budget)
         self.assertEqual(mock_stdout.getvalue().strip(), 
-                         f"We think you would enjoy a trip to {recommended_trip.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nTrip to {recommended_trip.state} added to your list of trips.")
+            f"We think you would enjoy a trip to {main.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nTrip to {recommended_trip.state} added to your list of trips.")
 
     @patch('builtins.input', side_effect=['no'])
     @patch('sys.stdout', new_callable=StringIO)
@@ -19,7 +19,7 @@ class TestMain(unittest.TestCase):
         budget = 1000
         main(budget)
         self.assertEqual(mock_stdout.getvalue().strip(), 
-                         f"We think you would enjoy a trip to {recommended_trip.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nNo trip added.")
+            f"We think you would enjoy a trip to {main.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nNo trip added.")
 
     @patch('builtins.input', side_effect=['yes'])
     @patch('sys.stdout', new_callable=StringIO)
@@ -27,7 +27,7 @@ class TestMain(unittest.TestCase):
         budget = 500
         main(budget)
         self.assertEqual(mock_stdout.getvalue().strip(), 
-                         f"We think you would enjoy a trip to {recommended_trip.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nNo trip added.")
+            f"We think you would enjoy a trip to {main.state}. It is within your budget of ${budget} with a cost rating of {'$' * recommended_trip.cost_rating}. It is nice and {recommended_trip.weather} and you would be able to try {recommended_trip.activity}!\nNo trip added.")
 
     @patch('builtins.input', side_effect=['yes'])
     @patch('sys.stdout', new_callable=StringIO)

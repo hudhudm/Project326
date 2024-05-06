@@ -63,13 +63,11 @@ def load_states_data(filename):
 def get_unique_values(trips, attribute):
     """
     Get unique values for a specific attribute from the list of trips.
-    
     Args:
-        trips (list): a list of Trip objects
-        attribute (str): the attribute to extract unique values from
-    
+    trips (list): a list of Trip objects
+    attribute (str): the attribute to extract unique values from
     Returns:
-        list: a list of unique values for the specified attribute
+    list: a list of unique values for the specified attribute
     """
     values = set(getattr(trip, attribute.lower()) for trip in trips)
     return list(values)
@@ -162,9 +160,10 @@ def get_random_trip(trips, activity):
     else:
         return None
 
-def main():
+
+def main(budget):
     trips = load_states_data('TripData.csv')
-    budget, activity, weather = poll_user_preferences(trips)
+    activity, weather = poll_user_preferences(trips, budget)
     recommended_trip = recommend_trip(trips, budget, activity, weather)
 
     if recommended_trip:
