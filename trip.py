@@ -2,7 +2,6 @@ import csv
 import random
 
 class Trip:
-    
     def __init__(self, state, activity, cost_rating, weather):
         """
         Initializes a Trip object.
