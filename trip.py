@@ -206,7 +206,5 @@ def main():
             else:
                 print(f"{traveler.name}, no suitable trip found based on your preferences.")
 
-    # Additional group functionalities can be implemented here
-
 if __name__ == "__main__":
     main()
