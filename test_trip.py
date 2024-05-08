@@ -120,7 +120,5 @@ class TestTripFunctions(unittest.TestCase):
         random_trip = trip.get_random_trip([], "Hiking")
         self.assertIsNone(random_trip)
 
-    # Add more test methods for other utility functions in trip.py
-
 if __name__ == '__main__':
     unittest.main()
