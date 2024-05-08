@@ -18,14 +18,14 @@ class Trip:
         self.weather = weather
 
 class Traveler:
-    """
-    Initializes a Traveler object.
-        
-    Args:
-        name (str): the name of the traveler
-        budget (float): the budget of the individual traveler
-    """
     def __init__(self, name, password, budget):
+        """
+        Initializes a Traveler object.
+        
+        Args:
+            name (str): the name of the traveler
+            budget (float): the budget of the individual traveler
+        """
         self.name = name
         self.password = password
         self.budget = budget
