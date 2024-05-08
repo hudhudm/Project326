@@ -21,7 +21,7 @@ class TestTrip(unittest.TestCase):
 
     def test_load_states_data(self):
         # Test loading data from CSV
-        trips = trip.load_states_data('test_trip_data.csv')
+        trips = trip.load_states_data('TripData.csv')
         self.assertEqual(len(trips), len(self.test_trip_data))
         for i in range(len(trips)):
             self.assertEqual(trips[i].state, self.test_trip_data[i].state)
@@ -32,10 +32,12 @@ class TestTrip(unittest.TestCase):
     def test_get_unique_values(self):
         # Test getting unique values
         unique_activities = trip.get_unique_values(self.test_trip_data, 'activity')
-        self.assertEqual(unique_activities, ["Hiking", "Sightseeing", "Beach"])
+        self.assertEqual(sorted(unique_activities), sorted(["Hiking", "Sightseeing", "Beach"]))
+
 
         unique_weather = trip.get_unique_values(self.test_trip_data, 'weather')
-        self.assertEqual(unique_weather, ["Sunny", "Rainy"])
+        self.assertEqual(sorted(unique_weather), sorted(["Sunny", "Rainy"]))
+
 
     # Add more test methods for other functions like poll_user_preferences, recommend_trip, etc.
 
