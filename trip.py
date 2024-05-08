@@ -17,9 +17,9 @@ class Traveler:
         self.activity = None
         self.weather = None
 
-    def add_trip(self, destination, cost, activities, weather):
-        trip = Trip(destination, cost, activities, weather)
-        self.trips.append(trip)
+    def add_trip(self, destination, cost_rating, activities, weather):
+        new_trip = Trip(destination, activities, cost_rating, weather)
+        self.trips.append(new_trip)
 
 def load_states_data(filename):
     trips = []

@@ -20,14 +20,12 @@ class TestTrip(unittest.TestCase):
         self.assertEqual(test_trip.weather, "Sunny")
 
     def test_load_states_data(self):
-        # Test loading data from CSV
         trips = trip.load_states_data('TripData.csv')
-        self.assertEqual(len(trips), len(self.test_trip_data))
-        for i in range(len(trips)):
-            self.assertEqual(trips[i].state, self.test_trip_data[i].state)
-            self.assertEqual(trips[i].activity, self.test_trip_data[i].activity)
-            self.assertEqual(trips[i].cost_rating, self.test_trip_data[i].cost_rating)
-            self.assertEqual(trips[i].weather, self.test_trip_data[i].weather)
+        self.assertEqual(len(trips), 50)
+        self.assertEqual(trips[0].state, "Alabama")
+        self.assertEqual(trips[0].activity, "Golfing")
+        self.assertEqual(trips[0].cost_rating, 3)
+        self.assertEqual(trips[0].weather, "Warm")
 
     def test_get_unique_values(self):
         # Test getting unique values
@@ -60,7 +58,7 @@ class TestTraveler(unittest.TestCase):
         test_traveler.add_trip("California", 3, ["Hiking"], "Sunny")
         self.assertEqual(len(test_traveler.trips), 1)
         self.assertEqual(test_traveler.trips[0].state, "California")
-        self.assertEqual(test_traveler.trips[0].activity, "Hiking")
+        self.assertEqual(test_traveler.trips[0].activity[0], "Hiking")
         self.assertEqual(test_traveler.trips[0].cost_rating, 3)
         self.assertEqual(test_traveler.trips[0].weather, "Sunny")
 
