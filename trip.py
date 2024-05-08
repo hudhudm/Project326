@@ -2,13 +2,30 @@ import csv
 import random
 
 class Trip:
+    
     def __init__(self, state, activity, cost_rating, weather):
+        """
+        Initializes a Trip object.
+        
+        Args:
+            state (str): the name of the destination state
+            activity (str): the activity available at the destination
+            cost_rating (int): the average cost rating on a scale of 1-5
+            weather (str): the average weather conditions
+        """
         self.state = state
         self.activity = activity
         self.cost_rating = cost_rating
         self.weather = weather
 
 class Traveler:
+    """
+    Initializes a Traveler object.
+        
+    Args:
+        name (str): the name of the traveler
+        budget (float): the budget of the individual traveler
+    """
     def __init__(self, name, password, budget):
         self.name = name
         self.password = password
@@ -18,10 +35,27 @@ class Traveler:
         self.weather = None
 
     def add_trip(self, destination, cost_rating, activities, weather):
+        """
+        Adds a trip to the traveler's list of trips.
+        
+        Args:
+            destination (str): the name of the destination state
+            cost (int): cost of the trip
+            activities (list): list of activities for the trip
+        """
         new_trip = Trip(destination, activities, cost_rating, weather)
         self.trips.append(new_trip)
 
 def load_states_data(filename):
+    """
+    Load data from the states.csv file.
+    
+    Args:
+        filename (str): the name of the CSV file
+    
+    Returns:
+        list: a list of Trip objects
+    """
     trips = []
     with open(filename, newline='') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -31,10 +65,26 @@ def load_states_data(filename):
     return trips
 
 def get_unique_values(trips, attribute):
+    """
+    Get unique values for a specific attribute from the list of trips.
+    
+    Args:
+        trips (list): a list of Trip objects
+        attribute (str): the attribute to extract unique values from
+    
+    Returns:
+        list: a list of unique values for the specified attribute
+    """
     values = set(getattr(trip, attribute.lower()) for trip in trips)
     return list(values)
 
 def poll_user_preferences(trips):
+    """
+    Poll the user for their preferences.
+    
+    Returns:
+        tuple: a tuple containing user's budget, desired activity, and preferred weather
+    """
     print("Here's a list of fun activities you can choose from: ", ', '.join(get_unique_values(trips, 'activity')))
     all_weather = get_unique_values(trips, 'weather')
     while True:
@@ -64,6 +114,18 @@ def poll_user_preferences(trips):
     return budget, activity, weather
 
 def recommend_trip(trips, budget, activity, weather):
+    """
+    Recommend an ideal trip based on user's preferences.
+    
+    Args:
+        trips (list): a list of Trip objects
+        budget (float): user's budget
+        activity (str): user's desired activity
+        weather (str): user's preferred weather conditions
+    
+    Returns:
+        Trip: the recommended trip object
+    """
     suitable_trips = []
     for trip in trips:
         if trip.activity.lower() == activity.lower() and trip.weather.lower() == weather.lower():
@@ -84,6 +146,16 @@ def recommend_trip(trips, budget, activity, weather):
         return None
 
 def get_random_trip(trips, activity):
+    """
+    Generate a random trip matching the selected activity.
+    
+    Args:
+        trips (list): a list of Trip objects
+        activity (str): user's desired activity
+    
+    Returns:
+        Trip: a random trip object matching the activity
+    """
     matching_trips = [trip for trip in trips if trip.activity.lower() == activity.lower()]
     if matching_trips:
         return random.choice(matching_trips)
